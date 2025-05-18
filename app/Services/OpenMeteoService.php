@@ -16,6 +16,6 @@ class OpenMeteoService
     {
         $response = $this->client->get("?latitude={$latitude}&longitude={$longitude}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,precipitation&temperature_unit=fahrenheit");
 
-        return $response->json() ?? '[]';
+        return $response->json() ?? [];
     }
 }
