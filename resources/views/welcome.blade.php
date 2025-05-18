@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Welcome to Laravel Starter</title>
+
+    @vite('resources/css/app.css')
+    @livewireStyles
 </head>
 <body>
-    <h1>Weather Dashboard</h1>
-    <p>This is a starting point for your assignment.</p>
-    <div>
-        <p>Current Temperature: <span>XX</span></p>
-        <p>Current Condition: Sunny</p>
+    <x-nav-bar />
+
+    <div class="px-4 py-5 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="pb-5 border-b border-gray-200">
+            <h3 class="text-base font-semibold text-gray-900">Weather Dashboard</h3>
+        </div>
+        <livewire:weather-dashboard/>
     </div>
-    <div>
-        <h2>Additional Details</h2>
-        <p>Humidity: <span>X%</span></p>
-        <p>Wind Speed: <span>X</span></p>
-    </div>
+
+    @livewireScripts
 </body>
 </html>
