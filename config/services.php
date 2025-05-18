@@ -34,5 +34,7 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
-
+    'open_meteo' => [
+        'base_url' => env('OPEN_METEO_URL', 'https://api.open-meteo.com/v1/forecast'),
+    ],
 ];
