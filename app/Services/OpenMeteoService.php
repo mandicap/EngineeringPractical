@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Contracts\WeatherServiceInterface;
 use Illuminate\Http\Client\PendingRequest;
 
-class OpenMeteoService
+class OpenMeteoService implements WeatherServiceInterface
 {
     public function __construct(private PendingRequest $client)
     {

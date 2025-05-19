@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Services\OpenMeteoService;
+use App\Contracts\WeatherServiceInterface;
 
 class WeatherDashboardController extends Controller
 {
-    public function __invoke(OpenMeteoService $service)
+    public function __invoke(WeatherServiceInterface $weatherService)
     {
         return view('welcome')->withWeather(
-            $service->getWeatherForecast('52.52', '13.41')
+            $weatherService->getWeatherForecast('35.0844', '106.6504')
         );
     }
 }

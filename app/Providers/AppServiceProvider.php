@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Contracts\WeatherServiceInterface;
 use App\Services\OpenMeteoService;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Http;
@@ -14,8 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        // Register OpenMeteoService and return a new client instance.
-        $this->app->singleton(OpenMeteoService::class, function (Application $app) {
+        // Register OpenMeteoService as WeatherService and return a new instance.
+        $this->app->singleton(WeatherServiceInterface::class, function (Application $app) {
             $client = Http::withOptions([
                 'base_uri' => config('services.open_meteo.base_url'),
                 'timeout' => config('services.open_meteo.timeout', 10),
